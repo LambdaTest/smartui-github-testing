@@ -95,7 +95,7 @@ async function startTest(gridUrl, capabilities, name) {
 
       driver.getTitle().then(function (title) {
         setTimeout(function () {
-          driver.executeScript("lambda-status=passed");
+          driver.executeScript("lambda-status=failed");
           driver.quit();
         }, 15000);
       });
