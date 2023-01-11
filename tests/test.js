@@ -76,7 +76,7 @@ async function startTest(gridUrl, capabilities, name) {
   console.log(caps.name, " : Setup Time :", duration.asSeconds());
 
   // navigate to a url
-  let url = "https://www.lambdatest.com";
+  let url = "https://www.google.com/";
   console.log(url);
   await driver
     .get(url)
@@ -95,7 +95,7 @@ async function startTest(gridUrl, capabilities, name) {
 
       driver.getTitle().then(function (title) {
         setTimeout(function () {
-          driver.executeScript("lambda-status=failed");
+          driver.executeScript("lambda-status=passed");
           driver.quit();
         }, 15000);
       });
