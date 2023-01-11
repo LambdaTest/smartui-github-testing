@@ -46,9 +46,11 @@ async function searchTextOnGoogle() {
 
   var gridUrl = "https://" + USERNAME + ":" + KEY + GRID_HOST;
   console.log("gridUrl : ", gridUrl);
+  console.log("GRID_HOST : ", GRID_HOST);
+
   console.log("GITHUB_REPOSITORY : ", process.env.GITHUB_REPOSITORY);
   console.log("GITHUB_URL : ", process.env.GITHUB_URL);
-  console.log("USERNAME : ",USERNAME);
+  console.log("USERNAME : ", USERNAME);
 
   console.log(capabilities);
   // console.log("Running " + parallelCount + " parallel tests ");
