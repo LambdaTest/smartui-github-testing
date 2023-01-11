@@ -37,3 +37,6 @@ jobs:
 
     - name: Execute Test
       run: npm test
+
+    - name: Execute Test
+      run: npm test
