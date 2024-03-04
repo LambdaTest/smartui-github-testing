@@ -1,4 +1,4 @@
- <h1>Smart UI Testing With GitHub</h1>
+ <h1>Smart UI Testing With GitHub </h1>
 
 <img height="400" src="https://user-images.githubusercontent.com/126776938/232716259-60606fe2-d9ed-4449-9586-321a5950308e.png">
 
