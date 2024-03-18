@@ -2,6 +2,7 @@
 
 <img height="400" src="https://user-images.githubusercontent.com/126776938/232716259-60606fe2-d9ed-4449-9586-321a5950308e.png">
 
+
   <p align="center">
   <a href="https://www.lambdatest.com/blog/?utm_source=github&utm_medium=repo&utm_campaign=playwright-sample" target="_bank">Blog</a>
   &nbsp; &#8901; &nbsp;
@@ -17,6 +18,7 @@
 </p>
 &emsp;
 &emsp;
+
 &emsp;
 
 *Learn the how to get started with testing GitHub app integration with SmartUI on the LambdaTest platform.*
@@ -147,4 +149,4 @@ To stay updated with the latest features and product add-ons, visit [Changelog](
 
 * Got a query? we are available 24x7 to help. [Contact Us](mailto:support@lambdatest.com)
 * For more info, visit - [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=playwright-sample)
-
+   
