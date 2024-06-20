@@ -7,13 +7,17 @@ var waitTime = 2 // 2 seconds
 const USERNAME = process.env.LT_USERNAME || "username";
 
 // AccessKey:  AccessKey can be generated from automation dashboard or profile section
-const KEY = process.env.LT_ACCESS_KEY || "accessKey";
+const KEY = process.env.LT_ACCESS_KEY || "accesskey";
 
 // gridUrl: gridUrl can be found at automation dashboard
-const GRID_HOST =
-process.env.GRID_HOST || "@hub.lambdatest.com/wd/hub";    //connect to lambdatest hub
+// const GRID_HOST =
+// process.env.GRID_HOST || "@stage-hub.lambdatest.com/wd/hub";    //connect to lambdatest hub
 
-const GRID_URL = process.env.GRID_URL || "GRID_URL";
+// const GRID_URL = process.env.GRID_URL || "GRID_URL";
+
+// const GRID_URL = "https://haiderk:V2mDZgIXHVEFxPfVu3cODSDpe9cZ4MT2Z1ZkDbp5uMJ8XL0nxh@stage-hub.lambdatestinternal.com/wd/hub" 
+const GRID_URL = "https://haiderk:i7vF5r66IYgsgE9Hp5t6hZqd5PkQX021FgpWRC70mp0ShbFh1R@hub.lambdatest.com/wd/hub" 
+
 
 async function searchTextOnGoogle() {
   var keys = process.argv;
@@ -21,7 +25,7 @@ async function searchTextOnGoogle() {
   let parallelCount = keys[2] || 1;
   let tunnel = keys[3] || false;
   let platform = keys[4] || "Windows 10";
-  let browserName = keys[5] || "chrome";
+  let browserName = keys[5] || "edge";
   let version = keys[6] || "latest";
 
   // Setup Input capabilities
@@ -33,9 +37,11 @@ async function searchTextOnGoogle() {
     visual: true,
     user: USERNAME,
     accessKey: KEY,
+    "selenium_version": "4.0.0",
     name: "test session", // name of the test
     build: platform + browserName + version, // name of the build
-    "smartUI.project": "github-integration-demo",
+    "smartUI.project": "DOT-3410",
+    // "smartUI.build": "[PR: 6208] Commit:3 ",
     github: {
       url: process.env.GITHUB_URL,
     },
@@ -50,7 +56,7 @@ async function searchTextOnGoogle() {
   console.log("GITHUB_REPOSITORY : ", process.env.GITHUB_REPOSITORY);
 
   console.log(capabilities);
-  console.log("Running " + parallelCount + " parallel tests ");
+  console.log("Running " + parallelCount + " parallel tests  ");
   let i = 1;
   for (i = 1; i <= parallelCount; i++) {
     startTest(gridUrl, capabilities, "Test " + i);
@@ -83,8 +89,10 @@ async function startTest(gridUrl, capabilities, name) {
 
       // For Smartui TakeScreenshot
       setTimeout(function () {
-        console.log("taking screenshot ...")
-        driver.executeScript(`smartui.takeScreenshot,{"screenshotName":"sample-screenshot"}`).then(out => {
+        console.log("taking screenshot ....")
+        // driver.executeScript(`smartui.takeScreenshot,{"screenshotName":"A-1",}`).then(out => {
+          driver.executeScript(`smartui.takeScreenshot=S-1`).then(out => {
+          // driver.executeScript(`smartui.takeFullPageScreenshot=S-1`).then(out => {
           console.log("RESPONSE :", out)
           return
         });
