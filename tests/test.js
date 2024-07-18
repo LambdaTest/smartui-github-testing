@@ -23,7 +23,7 @@ async function searchTextOnGoogle() {
   console.log(keys);
   let parallelCount = keys[2] || 1;
   let tunnel = keys[3] || false;
-  let platform = keys[4] || "Windows 11";
+  let platform = keys[4] || "Windows 10";
   let browserName = keys[5] || "chrome";
   let version = keys[6] || "latest";
 
