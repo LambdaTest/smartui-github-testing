@@ -34,8 +34,8 @@ async function searchTextOnGoogle() {
     version: version,
     queueTimeout: 300,
     visual: true,
-    user: USERNAME,
-    accessKey: KEY,
+    user: process.env.LT_USERNAME,
+    accessKey: process.env.LT_ACCESS_KEY,
     name: "test session", // name of the test
     build: platform + browserName + version, // name of the build
     "smartUI.build": "Github-build",
