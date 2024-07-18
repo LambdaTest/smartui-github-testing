@@ -38,7 +38,7 @@ async function searchTextOnGoogle() {
     accessKey: process.env.LT_ACCESS_KEY,
     name: "test session", // name of the test
     build: platform + browserName + version, // name of the build
-    "smartUI.build": "Github-build-5",
+    "smartUI.build": "Github-build-6",
     "smartUI.project": "Egifter-integration-testing",
     github: {
       url: process.env.GITHUB_URL,
@@ -90,10 +90,7 @@ async function startTest(gridUrl, capabilities, name) {
         console.log("taking screenshot ...")
         // driver.executeScript(`smartui.takeScreenshot,{"screenshotName":"sample-screenshot"}`).then(out => {
           // driver.executeScript(`smartui.takeScreenshot=S-1`).then(out => {
-            driver.executeScript("smartui.fetchScreenshotStatus=S-1").then(out => {
-
-
-
+            driver.executeScript(`smartui.fetchScreenshotStatus=S-1`).then(out => {
         // driver.executeScript(`smartui.takeFullPageScreenshot=S-1`).then(out => {
           console.log("RESPONSE :", out)
           return
