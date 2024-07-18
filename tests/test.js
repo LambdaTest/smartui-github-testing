@@ -37,7 +37,7 @@ async function searchTextOnGoogle() {
     accessKey: process.env.LT_ACCESS_KEY,
     name: "test session", // name of the test
     build: `${platform}${browserName}${version}`, // name of the build
-    // "smartUI.build": "Github-build-6",
+    "smartUI.build": "Github-build-6",
     "smartUI.project": "Egifter-integration-testing",
     github: {
       url: process.env.GITHUB_URL,
