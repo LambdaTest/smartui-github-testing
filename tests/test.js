@@ -14,15 +14,15 @@ const waitTime = 2; // 2 seconds
 // const GRID_HOST = process.env.GRID_HOST || "@hub.lambdatest.com/wd/hub"; //connect to lambdatest hub
 
 // const GRID_URL = process.env.GRID_URL || "GRID_URL";
-// const GRID_URL = "https://haiderk:V2mDZgIXHVEFxPfVu3cODSDpe9cZ4MT2Z1ZkDbp5uMJ8XL0nxh@stage-hub.lambdatestinternal.com/wd/hub";
-const GRID_URL = "https://haiderk:i7vF5r66IYgsgE9Hp5t6hZqd5PkQX021FgpWRC70mp0ShbFh1R@hub.lambdatest.com/wd/hub";
+const GRID_URL = "https://haiderk:V2mDZgIXHVEFxPfVu3cODSDpe9cZ4MT2Z1ZkDbp5uMJ8XL0nxh@stage-hub.lambdatestinternal.com/wd/hub";
+// const GRID_URL = "https://haiderk:i7vF5r66IYgsgE9Hp5t6hZqd5PkQX021FgpWRC70mp0ShbFh1R@hub.lambdatest.com/wd/hub";
 
 async function searchTextOnGoogle() {
   const keys = process.argv;
   console.log(keys);
   const parallelCount = keys[2] || 1;
   const tunnel = keys[3] || false;
-  const platform = keys[4] || "Windows 11";
+  const platform = keys[4] || "Windows 10";
   const browserName = keys[5] || "chrome";
   const version = keys[6] || "latest";
 
@@ -37,7 +37,7 @@ async function searchTextOnGoogle() {
     accessKey: process.env.LT_ACCESS_KEY,
     name: "test session", // name of the test
     build: `${platform}${browserName}${version}`, // name of the build
-    "smartUI.build": "Github-build-3",
+    "smartUI.build": "Github-build-9",
     "smartUI.project": "Egifter-integration-testing",
     github: {
       url: process.env.GITHUB_URL,
