@@ -22,7 +22,7 @@ async function searchTextOnGoogle() {
   console.log(keys);
   const parallelCount = keys[2] || 1;
   const tunnel = keys[3] || false;
-  const platform = keys[4] || "Windows 8";
+  const platform = keys[4] || "Windows 10";
   const browserName = keys[5] || "chrome";
   const version = keys[6] || "latest";
 
@@ -37,7 +37,7 @@ async function searchTextOnGoogle() {
     accessKey: process.env.LT_ACCESS_KEY,
     name: "test session", // name of the test
     build: `${platform}${browserName}${version}`, // name of the build
-    "smartUI.build": "Github-build-9",
+    "smartUI.build": "Github-build-10",
     "smartUI.project": "Egifter-integration-testing",
     github: {
       url: process.env.GITHUB_URL,
