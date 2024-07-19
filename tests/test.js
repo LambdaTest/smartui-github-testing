@@ -37,7 +37,7 @@ async function searchTextOnGoogle() {
     accessKey: process.env.LT_ACCESS_KEY,
     name: "test session", // name of the test
     build: `${platform}${browserName}${version}`, // name of the build
-    "smartUI.build": "Github-baseline",
+    "smartUI.build": "Github-NonBaseline-1",
     "smartUI.project": "Gethealthie-integration-testing",
     github: {
       url: process.env.GITHUB_URL,
@@ -122,5 +122,4 @@ async function startTest(gridUrl, capabilities, name) {
     await driver.quit();
   }
 }
-
 searchTextOnGoogle();
