@@ -83,7 +83,7 @@ async function startTest(gridUrl, capabilities, name) {
     setTimeout(() => {
       driver.executeScript(`smartui.takeScreenshot=S-1`).then(() => {
         sleep(4000);
-        driver.executeScript(`smartui.fetchScreenshotStatus=S-1`).then(out => {
+        driver.executeScript(`smartui.fetchScreenshotStatus=S-2`).then(out => {
           console.log("response:", out);
         }).catch(err => {
           console.error("Error fetching screenshot status:", err);
