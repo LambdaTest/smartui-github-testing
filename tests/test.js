@@ -22,7 +22,7 @@ async function searchTextOnGoogle() {
   console.log(keys);
   const parallelCount = keys[2] || 1;
   const tunnel = keys[3] || false;
-  const platform = keys[4] || "Windows 10";
+  const platform = keys[4] || "Windows 11";
   const browserName = keys[5] || "chrome";
   const version = keys[6] || "latest";
 
@@ -37,7 +37,7 @@ async function searchTextOnGoogle() {
     accessKey: process.env.LT_ACCESS_KEY,
     name: "test session", // name of the test
     build: `${platform}${browserName}${version}`, // name of the build
-    "smartUI.build": "Github-Test-2",
+    "smartUI.build": "Github-Test-3",
     "smartUI.project": "Gethealthie-integration-1",
     github: {
       url: process.env.GITHUB_URL,
@@ -84,6 +84,20 @@ async function startTest(gridUrl, capabilities, name) {
       driver.executeScript(`smartui.takeScreenshot=S-1`).then(() => {
         sleep(4000);
         driver.executeScript(`smartui.fetchScreenshotStatus=S-1`).then(out => {
+          console.log("response:", out);
+        }).catch(err => {
+          console.error("Error fetching screenshot status:", err);
+        });
+      }).catch(err => {
+        console.error("Error taking screenshot:", err);
+      });
+    }, waitTime * 1000);
+
+    console.log("taking screenshot 2...");
+    setTimeout(() => {
+      driver.executeScript(`smartui.takeScreenshot=S-2`).then(() => {
+        sleep(4000);
+        driver.executeScript(`smartui.fetchScreenshotStatus=S-2`).then(out => {
           console.log("response:", out);
         }).catch(err => {
           console.error("Error fetching screenshot status:", err);
