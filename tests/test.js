@@ -75,7 +75,7 @@ async function startTest(gridUrl, capabilities, name) {
     console.log(`${caps.name} : Setup Time: ${duration.asSeconds()} seconds`);
 
     // const url = "https://www.lambdatest.com/enterprise";
-    const url = "https://www.flipkart.com/";
+    const url = "https://www.lambdatest.com/";
     console.log(url);
     await driver.get(url);
 
