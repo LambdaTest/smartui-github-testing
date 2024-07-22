@@ -23,8 +23,9 @@ async function searchTextOnGoogle() {
   console.log(keys);
   const parallelCount = keys[2] || 1;
   const tunnel = keys[3] || false;
-  const platform = keys[4] || "Windows 10";
-  const browserName = keys[5] || "chrome";
+  // const platform = keys[4] || "Windows 10";
+  const platform = keys[4] || "bigsur";
+  const browserName = keys[5] || "safari";
   const version = keys[6] || "latest";
 
   // Setup Input capabilities
