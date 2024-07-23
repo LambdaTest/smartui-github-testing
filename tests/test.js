@@ -39,7 +39,7 @@ async function searchTextOnGoogle() {
     accessKey: process.env.LT_ACCESS_KEY,
     name: "test session", // name of the test
     build: `${platform}${browserName}${version}`, // name of the build
-    "smartUI.build": "smartui-54fdc8d34b",
+    // "smartUI.build": "smartui-54fdc8d34b",
     "smartUI.project": "Gethealthie-DOT-3410-1", 
     github: {
       url: process.env.GITHUB_URL,
@@ -75,8 +75,8 @@ async function startTest(gridUrl, capabilities, name) {
     const duration = moment.duration(end_date.diff(start_date));
     console.log(`${caps.name} : Setup Time: ${duration.asSeconds()} seconds`);
 
-    const url = "https://www.lambdatest.com/";
-    // const url = "https://www.google.com/";
+    // const url = "https://www.lambdatest.com/";
+    const url = "https://www.google.com/";
     // const url = "https://www.samsung.com/";
 
     console.log(url);
