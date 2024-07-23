@@ -75,9 +75,9 @@ async function startTest(gridUrl, capabilities, name) {
     const duration = moment.duration(end_date.diff(start_date));
     console.log(`${caps.name} : Setup Time: ${duration.asSeconds()} seconds`);
 
-    // const url = "https://www.lambdatest.com/";
+    const url = "https://www.lambdatest.com/";
     // const url = "https://www.google.com/";
-    const url = "https://www.samsung.com/";
+    // const url = "https://www.samsung.com/";
 
     console.log(url);
     await driver.get(url);
@@ -101,6 +101,34 @@ async function startTest(gridUrl, capabilities, name) {
       driver.executeScript(`smartui.takeScreenshot=S-2`).then(() => {
 
         driver.executeScript(`smartui.fetchScreenshotStatus=S-2`).then(out => {
+          console.log("response:", out);
+        }).catch(err => {
+          console.error("Error fetching screenshot status:", err);
+        });
+      }).catch(err => {
+        console.error("Error taking screenshot:", err);
+      });
+    }, waitTime * 1000);
+
+    console.log("taking screenshot 3 ...");
+    setTimeout(() => {
+      driver.executeScript(`smartui.takeScreenshot=S-3`).then(() => {
+
+        driver.executeScript(`smartui.fetchScreenshotStatus=S-3`).then(out => {
+          console.log("response:", out);
+        }).catch(err => {
+          console.error("Error fetching screenshot status:", err);
+        });
+      }).catch(err => {
+        console.error("Error taking screenshot:", err);
+      });
+    }, waitTime * 1000);
+
+    console.log("taking screenshot 4 ...");
+    setTimeout(() => {
+      driver.executeScript(`smartui.takeScreenshot=S-4`).then(() => {
+
+        driver.executeScript(`smartui.fetchScreenshotStatus=S-4`).then(out => {
           console.log("response:", out);
         }).catch(err => {
           console.error("Error fetching screenshot status:", err);
