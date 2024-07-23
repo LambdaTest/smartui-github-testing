@@ -23,7 +23,7 @@ async function searchTextOnGoogle() {
   console.log(keys);
   const parallelCount = keys[2] || 1;
   const tunnel = keys[3] || false;
-  const platform = keys[4] || "Windows 10";
+  const platform = keys[4] || "Windows 11";
   // const platform = keys[4] || "bigsur";
   const browserName = keys[5] || "chrome";
   const version = keys[6] || "latest";
@@ -76,7 +76,7 @@ async function startTest(gridUrl, capabilities, name) {
     console.log(`${caps.name} : Setup Time: ${duration.asSeconds()} seconds`);
 
     // const url = "https://www.lambdatest.com/";
-    const url = "https://www.apple.com/";
+    const url = "https://www.google.com/";
     console.log(url);
     await driver.get(url);
 
