@@ -23,7 +23,7 @@ async function searchTextOnGoogle() {
   console.log(keys);
   const parallelCount = keys[2] || 1;
   const tunnel = keys[3] || false;
-  const platform = keys[4] || "Windows 11";
+  const platform = keys[4] || "Windows 8";
   // const platform = keys[4] || "bigsur";
   const browserName = keys[5] || "chrome";
   const version = keys[6] || "latest";
@@ -39,7 +39,7 @@ async function searchTextOnGoogle() {
     accessKey: process.env.LT_ACCESS_KEY,
     name: "test session", // name of the test
     build: `${platform}${browserName}${version}`, // name of the build
-    // "smartUI.build": "smartui-58d80eed1a",
+    "smartUI.build": "smartui-37b388b661",
     "smartUI.project": "Egifter-DOT-3533", 
     github: {
       url: process.env.GITHUB_URL,
@@ -75,8 +75,8 @@ async function startTest(gridUrl, capabilities, name) {
     const duration = moment.duration(end_date.diff(start_date));
     console.log(`${caps.name} : Setup Time: ${duration.asSeconds()} seconds`);
 
-    const url = "https://www.lambdatest.com/";
-    // const url = "https://www.google.com/";
+    // const url = "https://www.lambdatest.com/";
+    const url = "https://www.google.com/";
     // const url = "https://www.samsung.com/";
 
     console.log(url);
