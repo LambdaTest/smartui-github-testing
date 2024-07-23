@@ -39,8 +39,8 @@ async function searchTextOnGoogle() {
     accessKey: process.env.LT_ACCESS_KEY,
     name: "test session", // name of the test
     build: `${platform}${browserName}${version}`, // name of the build
-    // "smartUI.build": "smartui-54fdc8d34b",
-    "smartUI.project": "Gethealthie-DOT-3410", 
+    "smartUI.build": "smartui-54fdc8d34b",
+    "smartUI.project": "Gethealthie-DOT-3410-1", 
     github: {
       url: process.env.GITHUB_URL,
     },
@@ -95,23 +95,6 @@ async function startTest(gridUrl, capabilities, name) {
         console.error("Error taking screenshot:", err);
       });
     }, waitTime * 1000);
-
-    console.log("taking screenshot 2 ...");
-    setTimeout(() => {
-      driver.executeScript(`smartui.takeScreenshot=S-2`).then(() => {
-
-        driver.executeScript(`smartui.fetchScreenshotStatus=S-2`).then(out => {
-          console.log("response:", out);
-        }).catch(err => {
-          console.error("Error fetching screenshot status:", err);
-        });
-      }).catch(err => {
-        console.error("Error taking screenshot:", err);
-      });
-    }, waitTime * 1000);
-
-
-
     
 
     driver.getTitle().then(function (title) {
