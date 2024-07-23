@@ -39,7 +39,7 @@ async function searchTextOnGoogle() {
     accessKey: process.env.LT_ACCESS_KEY,
     name: "test session", // name of the test
     build: `${platform}${browserName}${version}`, // name of the build
-    // "smartUI.build": "smartui-c5af03a757",
+    "smartUI.build": "smartui-c5af03a757",
     "smartUI.project": "Gethealthie-integration-2",
     github: {
       url: process.env.GITHUB_URL,
@@ -75,8 +75,8 @@ async function startTest(gridUrl, capabilities, name) {
     const duration = moment.duration(end_date.diff(start_date));
     console.log(`${caps.name} : Setup Time: ${duration.asSeconds()} seconds`);
 
-    const url = "https://www.lambdatest.com/";
-    // const url = "https://www.flipkart.com/";
+    // const url = "https://www.lambdatest.com/";
+    const url = "https://www.flipkart.com/";
     console.log(url);
     await driver.get(url);
 
