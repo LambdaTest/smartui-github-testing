@@ -14,9 +14,9 @@ const waitTime = 2; // 2 seconds
 // const GRID_HOST = process.env.GRID_HOST || "@hub.lambdatest.com/wd/hub"; //connect to lambdatest hub
 
 // const GRID_URL = process.env.GRID_URL || "GRID_URL";
-const GRID_URL = "https://haiderk:V2mDZgIXHVEFxPfVu3cODSDpe9cZ4MT2Z1ZkDbp5uMJ8XL0nxh@stage-hub.lambdatestinternal.com/wd/hub";
+// const GRID_URL = "https://haiderk:V2mDZgIXHVEFxPfVu3cODSDpe9cZ4MT2Z1ZkDbp5uMJ8XL0nxh@stage-hub.lambdatestinternal.com/wd/hub";
 // const GRID_URL = "https://smartui-internal:jNbKw8iwoDlqGuBfIBtd5F1Cnr4A0H07ifYNDGpylobjWyA2QX@stage-hub.lambdatestinternal.com/wd/hub";
-// const GRID_URL = "https://haiderk:i7vF5r66IYgsgE9Hp5t6hZqd5PkQX021FgpWRC70mp0ShbFh1R@hub.lambdatest.com/wd/hub";
+const GRID_URL = "https://haiderk:i7vF5r66IYgsgE9Hp5t6hZqd5PkQX021FgpWRC70mp0ShbFh1R@hub.lambdatest.com/wd/hub";
 
 async function searchTextOnGoogle() {
   const keys = process.argv;
@@ -40,7 +40,7 @@ async function searchTextOnGoogle() {
     name: "test session", // name of the test
     build: `${platform}${browserName}${version}`, // name of the build
     // "smartUI.build": "smartui-99e5751623",
-    "smartUI.project": "MergeBaseline",
+    "smartUI.project": "MergeBaseline", 
     github: {
       url: process.env.GITHUB_URL,
     },
@@ -75,9 +75,9 @@ async function startTest(gridUrl, capabilities, name) {
     const duration = moment.duration(end_date.diff(start_date));
     console.log(`${caps.name} : Setup Time: ${duration.asSeconds()} seconds`);
 
-    // const url = "https://www.lambdatest.com/";
+    const url = "https://www.lambdatest.com/";
     // const url = "https://www.google.com/";
-    const url = "https://www.samsung.com/";
+    // const url = "https://www.samsung.com/";
 
     console.log(url);
     await driver.get(url);
