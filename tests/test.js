@@ -23,7 +23,7 @@ async function searchTextOnGoogle() {
   console.log(keys);
   const parallelCount = keys[2] || 1;
   const tunnel = keys[3] || false;
-  const platform = keys[4] || "Windows 11";
+  const platform = keys[4] || "Windows 10";
   // const platform = keys[4] || "bigsur";
   const browserName = keys[5] || "chrome";
   const version = keys[6] || "latest";
@@ -39,7 +39,7 @@ async function searchTextOnGoogle() {
     accessKey: process.env.LT_ACCESS_KEY,
     name: "test session", // name of the test
     build: `${platform}${browserName}${version}`, // name of the build
-    "smartUI.build": "smartui-c5af03a757",
+    "smartUI.build": "smartui-0ddffba7d0",
     "smartUI.project": "Gethealthie-integration-2",
     github: {
       url: process.env.GITHUB_URL,
