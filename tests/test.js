@@ -41,7 +41,7 @@ async function searchTextOnGoogle() {
     build: `${platform}${browserName}${version}`, // name of the build
     // "smartUI.build": "rachaelc/sc-118267/no-availability-1722894770////",
     "smartUI.build": "Abc!@#$%^&*()_+[]\{}|;':<>?,./",
-    "smartUI.project": "Gethealthie-Build_Issue", 
+    "smartUI.project": "Gethealthie-Build_Issue",    
     github: {
       url: process.env.GITHUB_URL,
     },
@@ -127,7 +127,6 @@ async function startTest(gridUrl, capabilities, name) {
     await driver.quit();
   }
 }
-
 searchTextOnGoogle();
 
 
