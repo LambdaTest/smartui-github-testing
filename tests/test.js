@@ -14,9 +14,9 @@ const waitTime = 2; // 2 seconds
 // const GRID_HOST = process.env.GRID_HOST || "@hub.lambdatest.com/wd/hub"; //connect to lambdatest hub
 
 // const GRID_URL = process.env.GRID_URL || "GRID_URL";
-const GRID_URL = "https://haiderk:V2mDZgIXHVEFxPfVu3cODSDpe9cZ4MT2Z1ZkDbp5uMJ8XL0nxh@stage-hub.lambdatestinternal.com/wd/hub";
+// const GRID_URL = "https://haiderk:V2mDZgIXHVEFxPfVu3cODSDpe9cZ4MT2Z1ZkDbp5uMJ8XL0nxh@stage-hub.lambdatestinternal.com/wd/hub";
 // const GRID_URL = "https://smartui-internal:jNbKw8iwoDlqGuBfIBtd5F1Cnr4A0H07ifYNDGpylobjWyA2QX@stage-hub.lambdatestinternal.com/wd/hub";
-// const GRID_URL = "https://haiderk:i7vF5r66IYgsgE9Hp5t6hZqd5PkQX021FgpWRC70mp0ShbFh1R@hub.lambdatest.com/wd/hub";
+const GRID_URL = "https://haiderk:i7vF5r66IYgsgE9Hp5t6hZqd5PkQX021FgpWRC70mp0ShbFh1R@hub.lambdatest.com/wd/hub";
 
 async function searchTextOnGoogle() {
   const keys = process.argv;
@@ -85,9 +85,9 @@ async function startTest(gridUrl, capabilities, name) {
 
     console.log("taking screenshot ...");
     setTimeout(() => {
-      driver.executeScript(`smartui.takeScreenshot=S-1`).then(() => {
+      driver.executeScript(`smartui.takeScreenshot=@#$%^&*()_+[]\{}|;':<>`).then(() => {
 
-        driver.executeScript(`smartui.fetchScreenshotStatus=S-1`).then(out => {
+        driver.executeScript(`smartui.fetchScreenshotStatus=@#$%^&*()_+[]\{}|;':<>`).then(out => {
           console.log("response:", out);
         }).catch(err => {
           console.error("Error fetching screenshot status:", err);
