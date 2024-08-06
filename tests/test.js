@@ -40,7 +40,7 @@ async function searchTextOnGoogle() {
     name: "test session", // name of the test
     build: `${platform}${browserName}${version}`, // name of the build
     // "smartUI.build": "rachaelc/sc-118267/no-availability-1722894770////",
-    "smartUI.build": "!@#$%^&*()_+[]\{}|;':<>?,./",
+    "smartUI.build": "Abc!@#$%^&*()_+[]\{}|;':<>?,./",
     "smartUI.project": "Gethealthie-Build_Issue", 
     github: {
       url: process.env.GITHUB_URL,
