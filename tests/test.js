@@ -41,7 +41,7 @@ async function searchTextOnGoogle() {
     build: `${platform}${browserName}${version}`, // name of the build
     "smartUI.build": "rachaelc/sc-118267/no-availability-1722894770///",
     // "smartUI.build": "Abc!@#$%^&*()_+[  ]\{}|;':<>?",
-    "smartUI.project": "Abc!@#$%^&*()_+[]\{}|;':<>?",    
+    "smartUI.project": "Abc!@#$%^&*()_+[]\{}|;':<>?po",    
     github: {
       url: process.env.GITHUB_URL,
     },
