@@ -82,7 +82,6 @@ async function startTest(gridUrl, capabilities, name) {
     const url = "https://www.lambdatest.com/";
     // const url = "https://www.flipkart.com/";
     // const url = "https://www.samsung.com/";
-
     console.log(url);
     await driver.get(url);
 
