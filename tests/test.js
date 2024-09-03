@@ -63,7 +63,6 @@ async function searchTextOnGoogle() {
     startTest(GRID_URL, capabilities, `Test ${i}`);
   }
 }
-
 async function startTest(gridUrl, capabilities, name) {
   const caps = { ...capabilities, name };
 
