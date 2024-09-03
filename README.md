@@ -68,6 +68,7 @@ const capabilities: {
     "commit": "{commitId}" //Optional
    }
 }
+
 ```
 
 ### Step 4: Setting up your CI configuration
