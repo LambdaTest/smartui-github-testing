@@ -129,6 +129,7 @@ async function startTest(gridUrl, capabilities, name) {
   }
 }
 
+
 searchTextOnGoogle();
 
 
