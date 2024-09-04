@@ -44,7 +44,7 @@ async function searchTextOnGoogle() {
     name: "test session", // name of the test
     build: `${platform}${browserName}${version}`, // name of the build
     // "smartUI.build": "rachaelc/sc-118267/no-availability-1722894770",/\
-    "smartUI.build": "GDPR-PR-CHECK-1",
+    // "smartUI.build": "GDPR-PR-CHECK-1",
     "smartUI.project": "GDPR-EU-GITHUB-PR-CHECK",    
     github: {
       url: process.env.GITHUB_URL,
@@ -130,8 +130,6 @@ async function startTest(gridUrl, capabilities, name) {
     await driver.quit();
   }
 }
-
-
 searchTextOnGoogle();
 
 
