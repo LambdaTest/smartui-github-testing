@@ -18,7 +18,7 @@ const waitTime = 2; // 2 seconds
 // const GRID_URL = "https://smartui-internal:jNbKw8iwoDlqGuBfIBtd5F1Cnr4A0H07ifYNDGpylobjWyA2QX@stage-hub.lambdatestinternal.com/wd/hub";
 // const GRID_URL = "https://haiderk:i7vF5r66IYgsgE9Hp5t6hZqd5PkQX021FgpWRC70mp0ShbFh1R@hub.lambdatest.com/wd/hub";
 // const GRID_URL = "https://ltgdprhak:1JF7nbtNVDTSFQdstywJQxVqaaIEX87sP7q7ghbFjwpcm5Kbgv@stage-hub-eu.lambdatestinternal.com/wd/hub";
-const GRID_URL = "https://gdpreu:Fw6MmoQg09v3Zv8I1OhQS5CWlJX3vIj1IAYAtHFtZu9a53eqAB@stage-hub-eu.lambdatestinternal.com/wd/hub";
+const GRID_URL = "https://gdpreu:svffEGGVpCulkAYtaqCRVbHIwrZor4aD0BeF89I3xbaPLTpcXz@hub-eu.lambdatest.com/wd/hub";
 
 
 
@@ -45,7 +45,7 @@ async function searchTextOnGoogle() {
     build: `${platform}${browserName}${version}`, // name of the build
     // "smartUI.build": "rachaelc/sc-118267/no-availability-1722894770",/\
     // "smartUI.build": "GDPR-PR-CHECK-1",
-    "smartUI.project": "GDPR-EU-GITHUB-PR-CHECK",    
+    "smartUI.project": "eu_gdpr_github_pr_check",    
     github: {
       url: process.env.GITHUB_URL,
     },
