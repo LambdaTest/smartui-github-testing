@@ -100,7 +100,6 @@ async function startTest(gridUrl, capabilities, name) {
       });
     }, waitTime * 1000);
     
-
     driver.getTitle().then(function (title) {
       console.log("Title:", title);
       setTimeout(function () {
