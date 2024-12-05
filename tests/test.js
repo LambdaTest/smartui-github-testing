@@ -14,11 +14,11 @@ const waitTime = 2; // 2 seconds
 // const GRID_HOST = process.env.GRID_HOST || "@hub.lambdatest.com/wd/hub"; //connect to lambdatest hub
 
 // const GRID_URL = process.env.GRID_URL || "GRID_URL";
-// const GRID_URL = "https://haiderk:V2mDZgIXHVEFxPfVu3cODSDpe9cZ4MT2Z1ZkDbp5uMJ8XL0nxh@stage-hub.lambdatestinternal.com/wd/hub";
+const GRID_URL = "https://haiderk:W0AB7YqcubvLeUNPD65N2XANdVq55VZO8KdmLAEO1fbrSFC97B@stage-hub.lambdatestinternal.com/wd/hub";
 // const GRID_URL = "https://smartui-internal:jNbKw8iwoDlqGuBfIBtd5F1Cnr4A0H07ifYNDGpylobjWyA2QX@stage-hub.lambdatestinternal.com/wd/hub";
 // const GRID_URL = "https://haiderk:i7vF5r66IYgsgE9Hp5t6hZqd5PkQX021FgpWRC70mp0ShbFh1R@hub.lambdatest.com/wd/hub";
 // const GRID_URL = "https://ltgdprhak:1JF7nbtNVDTSFQdstywJQxVqaaIEX87sP7q7ghbFjwpcm5Kbgv@stage-hub-eu.lambdatestinternal.com/wd/hub";
-const GRID_URL = "https://gdpreu:svffEGGVpCulkAYtaqCRVbHIwrZor4aD0BeF89I3xbaPLTpcXz@hub-eu.lambdatest.com/wd/hub";
+// const GRID_URL = "https://gdpreu:svffEGGVpCulkAYtaqCRVbHIwrZor4aD0BeF89I3xbaPLTpcXz@hub-eu.lambdatest.com/wd/hub";
 
 
 
@@ -43,9 +43,10 @@ async function searchTextOnGoogle() {
     accessKey: process.env.LT_ACCESS_KEY,
     name: "test session", // name of the test
     build: `${platform}${browserName}${version}`, // name of the build
-    // "smartUI.build": "rachaelc/sc-118267/no-availability-1722894770",/\
-    // "smartUI.build": "GDPR-PR-CHECK-1",
-    "smartUI.project": "eu_gdpr_github_pr_check",    
+    // "smartUI.smartIgnore":true,
+    "smartUI.project": "[Git_Branching#ComparisonStrategy]",    
+       // "smartUI.build": "\",
+
     github: {
       url: process.env.GITHUB_URL,
     },
@@ -88,9 +89,9 @@ async function startTest(gridUrl, capabilities, name) {
 
     console.log("taking screenshot ...");
     setTimeout(() => {
-      driver.executeScript(`smartui.takeScreenshot=GDPR-TEST`).then(() => {
+      driver.executeScript(`smartui.takeScreenshot=TEST`).then(() => {
 
-        driver.executeScript(`smartui.fetchScreenshotStatus=GDPR-TEST`).then(out => {
+        driver.executeScript(`smartui.fetchScreenshotStatus=TEST`).then(out => {
           console.log("response:", out);
         }).catch(err => {
           console.error("Error fetching screenshot status:", err);
