@@ -130,7 +130,6 @@ async function startTest(gridUrl, capabilities, name) {
     await driver.quit();
   }
 }
-
 searchTextOnGoogle();
 
 
