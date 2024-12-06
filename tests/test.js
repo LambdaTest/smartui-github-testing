@@ -82,8 +82,8 @@ async function startTest(gridUrl, capabilities, name) {
     console.log(`${caps.name} : Setup Time: ${duration.asSeconds()} seconds`);
 
     // const url = "https://www.lambdatest.com/";
-    const url = "https://www.flipkart.com/";
-    // const url = "https://www.samsung.com/";
+    // const url = "https://www.flipkart.com/";
+    const url = "https://www.samsung.com/";
     console.log(url);
     await driver.get(url);
 
@@ -130,6 +130,7 @@ async function startTest(gridUrl, capabilities, name) {
     await driver.quit();
   }
 }
+
 searchTextOnGoogle();
 
 
