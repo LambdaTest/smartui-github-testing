@@ -45,7 +45,7 @@ async function searchTextOnGoogle() {
     build: `${platform}${browserName}${version}`, // name of the build
     "smartUI.smartIgnore":true,
     "smartUI.project": "[Git_Branching#ComparisonStrategy]",    
-       // "smartUI.build": "\",
+
 
     github: {
       url: process.env.GITHUB_URL,
