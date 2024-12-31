@@ -1,109 +1,149 @@
 const webdriver = require("selenium-webdriver");
 const By = webdriver.By;
-var moment = require("moment");
-var waitTime = 2 // 2 seconds
+const moment = require("moment");
+
+const waitTime = 2; // 2 seconds
 
 // username: Username can be found at automation dashboard
-const USERNAME = process.env.LT_USERNAME || "username";
+// const USERNAME = process.env.LT_USERNAME || "haiderk";
 
-// AccessKey:  AccessKey can be generated from automation dashboard or profile section
-const KEY = process.env.LT_ACCESS_KEY || "accessKey";
+// AccessKey: AccessKey can be generated from automation dashboard or profile section
+// const KEY = process.env.LT_ACCESS_KEY || "i7vF5r66IYgsgE9Hp5t6hZqd5PkQX021FgpWRC70mp0ShbFh1R";
 
 // gridUrl: gridUrl can be found at automation dashboard
-const GRID_HOST =
-process.env.GRID_HOST || "@hub.lambdatest.com/wd/hub";    //connect to lambdatest hub
+// const GRID_HOST = process.env.GRID_HOST || "@hub.lambdatest.com/wd/hub"; //connect to lambdatest hub
 
-const GRID_URL = process.env.GRID_URL || "GRID_URL";
+// const GRID_URL = process.env.GRID_URL || "GRID_URL";
+const GRID_URL = "https://haiderk:W0AB7YqcubvLeUNPD65N2XANdVq55VZO8KdmLAEO1fbrSFC97B@stage-hub.lambdatestinternal.com/wd/hub";
+// const GRID_URL = "https://smartui-internal:jNbKw8iwoDlqGuBfIBtd5F1Cnr4A0H07ifYNDGpylobjWyA2QX@stage-hub.lambdatestinternal.com/wd/hub";
+// const GRID_URL = "https://haiderk:i7vF5r66IYgsgE9Hp5t6hZqd5PkQX021FgpWRC70mp0ShbFh1R@hub.lambdatest.com/wd/hub";
+// const GRID_URL = "https://ltgdprhak:1JF7nbtNVDTSFQdstywJQxVqaaIEX87sP7q7ghbFjwpcm5Kbgv@stage-hub-eu.lambdatestinternal.com/wd/hub";
+// const GRID_URL = "https://gdpreu:svffEGGVpCulkAYtaqCRVbHIwrZor4aD0BeF89I3xbaPLTpcXz@hub-eu.lambdatest.com/wd/hub";
+
+
 
 async function searchTextOnGoogle() {
-  var keys = process.argv;
+  const keys = process.argv;
   console.log(keys);
-  let parallelCount = keys[2] || 1;
-  let tunnel = keys[3] || false;
-  let platform = keys[4] || "Windows 10";
-  let browserName = keys[5] || "chrome";
-  let version = keys[6] || "latest";
+  const parallelCount = keys[2] || 1;
+  const tunnel = keys[3] || false;
+  const platform = keys[4] || "Windows 10";
+  // const platform = keys[4] || "bigsur";
+  const browserName = keys[5] || "chrome";
+  const version = keys[6] || "latest";
 
   // Setup Input capabilities
-  let capabilities = {
+  const capabilities = {
     platform: platform,
     browserName: browserName,
     version: version,
     queueTimeout: 300,
     visual: true,
-    user: USERNAME,
-    accessKey: KEY,
+    user: process.env.LT_USERNAME,
+    accessKey: process.env.LT_ACCESS_KEY,
     name: "test session", // name of the test
-    build: platform + browserName + version, // name of the build
-    "smartUI.project": "github-integration-demo",
+    build: `${platform}${browserName}${version}`, // name of the build
+    "smartUI.smartIgnore":true,
+    "smartUI.project": "[Git_Branching#ComparisonStrategy]",    
+
+
     github: {
       url: process.env.GITHUB_URL,
     },
-  };
 
+  };
   if (tunnel === "true") {
     capabilities.tunnel = true;
   }
 
-  var gridUrl = GRID_URL;
-  console.log("gridUrl : ", gridUrl);
-  console.log("GITHUB_REPOSITORY : ", process.env.GITHUB_REPOSITORY);
+  console.log("gridUrl: ", GRID_URL);
+  console.log("GITHUB_REPOSITORY: ", process.env.GITHUB_REPOSITORY);
 
   console.log(capabilities);
-  console.log("Running " + parallelCount + " parallel tests ");
-  let i = 1;
-  for (i = 1; i <= parallelCount; i++) {
-    startTest(gridUrl, capabilities, "Test " + i);
+  console.log(`Running ${parallelCount} parallel tests`);
+
+  for (let i = 1; i <= parallelCount; i++) {
+    startTest(GRID_URL, capabilities, `Test ${i}`);
   }
 }
+async function startTest(gridUrl, capabilities, name) {
+  const caps = { ...capabilities, name };
 
+  try {
+    const start_date = moment();
+
+    const driver = await new webdriver.Builder()
+      .usingServer(gridUrl)
+      .withCapabilities(caps)
+      .build();
+
+    const end_date = moment();
+    const duration = moment.duration(end_date.diff(start_date));
+    console.log(`${caps.name} : Setup Time: ${duration.asSeconds()} seconds`);
+
+    // const url = "https://www.lambdatest.com/";
+    // const url = "https://www.flipkart.com/";
+    const url = "https://www.samsung.com/";
+    console.log(url);
+    await driver.get(url);
+
+    console.log("taking screenshot ...");
+    setTimeout(() => {
+      driver.executeScript(`smartui.takeScreenshot=TEST`).then(() => {
+
+        driver.executeScript(`smartui.fetchScreenshotStatus=TEST`).then(out => {
+          console.log("response:", out);
+        }).catch(err => {
+          console.error("Error fetching screenshot status:", err);
+        });
+      }).catch(err => {
+        console.error("Error taking screenshot:", err);
+      });
+    }, waitTime * 1000);
+    
+    driver.getTitle().then(function (title) {
+      console.log("Title:", title);
+      setTimeout(function () {
+        driver.executeScript("lambda-status=passed").then(() => {
+          driver.quit();
+        }).catch(err => {
+          console.error("Error setting lambda status to passed:", err);
+          driver.quit();
+        });
+      }, 15000);
+    }).catch(err => {
+      console.error("Error getting title:", err);
+      driver.executeScript("lambda-status=failed").then(() => {
+        driver.quit();
+      }).catch(scriptError => {
+        console.error("Failed to set lambda status:", scriptError);
+        driver.quit();
+      });
+    });
+  } catch (err) {
+    console.error("Test failed with reason:", err);
+    try {
+      await driver.executeScript("lambda-status=failed");
+    } catch (scriptError) {
+      console.error("Failed to set lambda status:", scriptError);
+    }
+    await driver.quit();
+  }
+}
 searchTextOnGoogle();
 
-async function startTest(gridUrl, capabilities, name) {
-  const caps = capabilities;
-  var start_date = moment();
-
-  const driver = await new webdriver.Builder()
-    .usingServer(gridUrl)
-    .withCapabilities(caps)
-    .build();
-
-  var end_date = moment();
-  var duration = moment.duration(end_date.diff(start_date));
-  console.log(caps.name, " : Setup Time :", duration.asSeconds());
-
-  // navigate to a url
-  let url = "https://www.lambdatest.com";
-  url = "https://www.lambdatest.com/enterprise";
-  console.log(url);
-  await driver
-    .get(url)
-    .then(function () {
-      const session = driver.getSession();
-
-      // For Smartui TakeScreenshot
-      setTimeout(function () {
-        console.log("taking screenshot ...")
-        driver.executeScript(`smartui.takeScreenshot,{"screenshotName":"sample-screenshot"}`).then(out => {
-          console.log("RESPONSE :", out)
-          return
-        });
-      }, waitTime * 1000);
 
 
-      driver.getTitle().then(function (title) {
-        setTimeout(function () {
-          driver.executeScript("lambda-status=passed");
-          driver.quit();
-        }, 15000);
-      });
-    })
-    .catch(function (err) {
-      error = JSON.stringify(err);
-      console.log(error);
-      console.log("test failed with reason " + err);
-      driver.executeScript("lambda-status=failed");
-      driver.quit();
-    });
-}
+
+
+
+
+
+
+
+
+
+
+
+
 

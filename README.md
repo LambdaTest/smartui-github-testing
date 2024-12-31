@@ -1,8 +1,16 @@
- <h1>Smart UI Testing With GitHub</h1>
+---
+runme:
+  id: 01HWAFWEYMX18NF1CSHAZ7M8QB
+  version: v3
+---
+
+<h1>Smart UI Testing With GitHub</h1>
 
 <img height="400" src="https://user-images.githubusercontent.com/126776938/232716259-60606fe2-d9ed-4449-9586-321a5950308e.png">
 
+
   <p align="center">
+   
   <a href="https://www.lambdatest.com/blog/?utm_source=github&utm_medium=repo&utm_campaign=playwright-sample" target="_bank">Blog</a>
   &nbsp; &#8901; &nbsp;
   <a href="https://www.lambdatest.com/support/docs/?utm_source=github&utm_medium=repo&utm_campaign=playwright-sample" target="_bank">Docs</a>
@@ -17,18 +25,19 @@
 </p>
 &emsp;
 &emsp;
+
 &emsp;
+
 
 *Learn the how to get started with testing GitHub app integration with SmartUI on the LambdaTest platform.*
 
-[<img height="58" width="200" src="https://user-images.githubusercontent.com/70570645/171866795-52c11b49-0728-4229-b073-4b704209ddde.png">](https://accounts.lambdatest.com/register?utm_source=github&utm_medium=repo&utm_campaign=playwright-sample)
-
+[](https://accounts.lambdatest.com/register?utm_source=github&utm_medium=repo&utm_campaign=playwright-sample)
 
 ## Table of Contents:
 
+
 * [Pre-requisites](#pre-requisites)
 * [Getting Started With Github App Integration with SmartUI](#getting-started-with-github-app-integration-with-smartui)
-
 
 ## Pre-requisites
 
@@ -38,7 +47,7 @@
 
 ## Getting Started With Github App Integration with SmartUI
 
-### Steps 1: Integrate the your Lambdatest Account with GitHub App. 
+### Steps 1: Integrate the your Lambdatest Account with GitHub App.
 
 You can integrate your LambdaTest account with the GiHub application in the following ways:
 
@@ -46,8 +55,7 @@ You can integrate your LambdaTest account with the GiHub application in the foll
 
 ![github-app-landing-92ef6e152a7302cb9ab88f5034b9ec0c](https://user-images.githubusercontent.com/126776938/232715867-f375b4df-1bc9-4e88-8340-44e986be2e9a.png)
 
-
-### Step 2: Select your GitHub repository 
+### Step 2: Select your GitHub repository
 
 Go to your GitHub repository where you want to configure your SmartUI project. Check out our GitHub sample [here](https://github.com/LambdaTest/smartui-node-sample).
 
@@ -55,7 +63,7 @@ Go to your GitHub repository where you want to configure your SmartUI project. C
 
 Add the `Github` capability to your current test configuration:
 
-```bash
+```bash {"id":"01HWAFWEYGEXVSMJCB2CKFCSDN"}
 const capabilities: {
   platform: "Windows 10",
   browserName: "chrome",
@@ -77,11 +85,13 @@ Setting up your CI workflow to execute on GitHub. Here is an example setup with 
 
 Go to `.github/workflows/<your_ci_file>.yml`.
 
-```bash
+```bash {"id":"01HWAFWEYHTNW1BFEH1B42Q0EE"}
     name: Execute SmartUI Test with Github App Integration
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+
+
 
     - name: Create commit status
       run: |
@@ -101,19 +111,19 @@ Go to `.github/workflows/<your_ci_file>.yml`.
 
 After the setup is completed, you can now execute your test suite with the Continuos Integration (CI) pipeline with any tool of your choice.
 
-**Please Note:** *On running the tests with this repository the user should be able to trigger the `GitHub Action` and execute the `SmartUI` tests for `Selenium`, `Cypress, CDP, and Taiko` frameworks. As this action does not work for `StoryBook`, check our how you can SmartUI test with `StoryBook` [here](https://github.com/LambdaTest/smartui-storybook).* 
+**Please Note:** *On running the tests with this repository the user should be able to trigger the `GitHub Action` and execute the `SmartUI` tests for `Selenium`, `Cypress, CDP, and Taiko` frameworks. As this action does not work for `StoryBook`, check our how you can SmartUI test with `StoryBook` [here](https://github.com/LambdaTest/smartui-storybook).*
 
 ### Step 6: Commit you changes over git on a branch and raise the PR to main branch.
 
 ### Step 7: Now you will see the `lambdatest-smartui-app` in the PR.
 
 ## Documentation & Resources :books:
-      
+
 Visit the following links to learn more about LambdaTest's features, setup and tutorials around test automation, mobile app testing, responsive testing, and manual testing.
 
 * [LambdaTest Documentation](https://www.lambdatest.com/support/docs/?utm_source=github&utm_medium=repo&utm_campaign=playwright-sample)
 * [LambdaTest Blog](https://www.lambdatest.com/blog/?utm_source=github&utm_medium=repo&utm_campaign=playwright-sample)
-* [LambdaTest Learning Hub](https://www.lambdatest.com/learning-hub/?utm_source=github&utm_medium=repo&utm_campaign=playwright-sample)    
+* [LambdaTest Learning Hub](https://www.lambdatest.com/learning-hub/?utm_source=github&utm_medium=repo&utm_campaign=playwright-sample)
 
 ## LambdaTest Community :busts_in_silhouette:
 
@@ -121,11 +131,11 @@ The [LambdaTest Community](https://community.lambdatest.com/?utm_source=github&u
 
 ## What's New At LambdaTest ❓
 
-To stay updated with the latest features and product add-ons, visit [Changelog](https://changelog.lambdatest.com/) 
-      
+To stay updated with the latest features and product add-ons, visit [Changelog](https://changelog.lambdatest.com/)
+
 ## About LambdaTest
 
-[LambdaTest](https://www.lambdatest.com?utm_source=github&utm_medium=repo&utm_campaign=playwright-sample) is an intelligent unified digital experience testing cloud that helps businesses drastically reduce time to market through faster test execution, ensuring quality releases and accelerated digital transformation. The platforms allows you to perform both real time and automation testing across 3000+ environments and real mobile devices, making it a top choice among other cloud testing platforms. Over 10,000+ enterprise customers and 2+ million users across 130+ countries rely on LambdaTest for their testing needs. 
+[LambdaTest](https://www.lambdatest.com?utm_source=github&utm_medium=repo&utm_campaign=playwright-sample) is an intelligent unified digital experience testing cloud that helps businesses drastically reduce time to market through faster test execution, ensuring quality releases and accelerated digital transformation. The platforms allows you to perform both real time and automation testing across 3000+ environments and real mobile devices, making it a top choice among other cloud testing platforms. Over 10,000+ enterprise customers and 2+ million users across 130+ countries rely on LambdaTest for their testing needs.
 
 ### Features
 
@@ -141,11 +151,11 @@ To stay updated with the latest features and product add-ons, visit [Changelog](
 * Online Accessibility Testing across 3000+ desktop and mobile browsers, browser versions, and operating systems.
 * Geolocation testing of web and mobile apps across 53+ countries.
 * LT Browser - for responsive testing across 50+ pre-installed mobile, tablets, desktop, and laptop viewports
-    
-[<img height="58" width="200" src="https://user-images.githubusercontent.com/70570645/171866795-52c11b49-0728-4229-b073-4b704209ddde.png">](https://accounts.lambdatest.com/register?utm_source=github&utm_medium=repo&utm_campaign=playwright-sample)
-      
+
+[](https://accounts.lambdatest.com/register?utm_source=github&utm_medium=repo&utm_campaign=playwright-sample)
+
 ## We are here to help you :headphones:
 
 * Got a query? we are available 24x7 to help. [Contact Us](mailto:support@lambdatest.com)
 * For more info, visit - [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=playwright-sample)
-
+   
